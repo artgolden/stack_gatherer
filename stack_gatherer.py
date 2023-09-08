@@ -185,7 +185,7 @@ def check_stack_and_collect_if_ready(stack_signature, output_dir):
         # We have to access by index since we can't gurantee that files were added to dict in order of planes
         file_list.append(active_stacks[stack_signature][i].get_file_path())
     sample_file_obj = ImageFile(file_list[0])
-    sample_file_obj.extension = "tif"
+    sample_file_obj.extension = "ome.tif"
     stack_path = os.path.join(output_dir, sample_file_obj.get_stack_name())
     collect_files_to_one_stack(file_list, stack_path)
     del active_stacks[stack_signature]
